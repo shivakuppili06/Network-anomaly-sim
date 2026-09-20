@@ -9,6 +9,7 @@ This is a conceptual, simulated project demonstrating AI-driven anomaly detectio
 - `data/generate_data.py`: Generates synthetic time-series network metrics (latency, packet loss, throughput, jitter) and injects anomalies.
 - `models/train_detector.py`: Trains an unsupervised Isolation Forest (scikit-learn) and an LSTM Autoencoder (PyTorch) to detect anomalies.
 - `utils/closed_loop.py`: A rule-based simulation demonstrating how detected anomalies could trigger corrective actions. This is NOT a live control system.
+- `utils/adaptive_response.py`: An RL-based decision optimization layer (contextual bandit) that learns which corrective actions work best for given anomaly contexts using simulated feedback. **Note: The reward function is a synthetic assumption, not derived from real telecom outcomes.**
 - `utils/visualize.py`: Generates plots comparing the models and visualizing the time series data.
 
 ## How to Run
@@ -36,11 +37,17 @@ This is a conceptual, simulated project demonstrating AI-driven anomaly detectio
    ```
    This generates an event log in `results/closed_loop_events.log`.
 
-5. **Generate Visualizations:**
+5. **Simulate Adaptive RL Responses:**
+   ```bash
+   python utils/adaptive_response.py
+   ```
+   This runs the contextual bandit simulation and saves a report and plot in `results/`.
+
+6. **Generate Visualizations:**
    ```bash
    python utils/visualize.py
    ```
    This creates plots in the `results/` directory.
 
 ## Results Summary
-The simulation outputs can be found in the `results/` directory, including model performance comparisons and simulated event logs mapping anomalies to actions.
+The simulation outputs can be found in the `results/` directory, including model performance comparisons, simulated event logs, and the learning curve of the RL adaptive response module.

@@ -1,0 +1,31 @@
+{
+    "total_events": 5000,
+    "bandit_accuracy": 0.7428,
+    "random_accuracy": 0.4804,
+    "final_q_values": {
+        "high_latency": {
+            "reroute": 0.8014375561545376,
+            "restart": 0.08474576271186442,
+            "adjust_qos": 0.6666666666666665,
+            "escalate": 0.6031746031746031
+        },
+        "throughput_drop": {
+            "reroute": 0.3673469387755101,
+            "restart": 0.861163227016886,
+            "adjust_qos": 0.22448979591836737,
+            "escalate": 0.7236842105263157
+        },
+        "jitter_spike": {
+            "reroute": 0.20408163265306123,
+            "restart": 0.09999999999999999,
+            "adjust_qos": 0.8013059701492542,
+            "escalate": 0.5833333333333333
+        },
+        "packet_loss_spike": {
+            "reroute": 0.6806049822064058,
+            "restart": 0.3333333333333333,
+            "adjust_qos": 0.6530612244897959,
+            "escalate": 0.6315789473684212
+        }
+    }
+}
